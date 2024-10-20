@@ -34,6 +34,7 @@ alias mv="mv -iv"
 alias ga='git add'
 alias gst='git status'
 alias gc='git commit'
+alias gls='git ls-files'
 alias cfg="/usr/bin/git --git-dir=$HOME/config/ --work-tree=$HOME"
 
 # Edit configs
