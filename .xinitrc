@@ -48,6 +48,12 @@ slstatus &
 # wallpaper
 $HOME/./.fehbg &
 
+# Hotkey daemon
+sxhkd &
+
+# Updates
+packageupdates &
+
 # Systray
 nm-applet &
 
