@@ -56,6 +56,7 @@ packageupdates &
 
 # Systray
 nm-applet &
+blueman-applet &
 
 # Restart loop
 while true; do
