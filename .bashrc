@@ -14,6 +14,8 @@ PURPLE="\[\e[1;35m\]"
 CYAN="\[\e[1;36m\]"
 RESET="\[\e[m\]"
 
+export XCURSOR_SIZE=16
+
 # Path
 export PATH="$HOME/.dotfiles/bin:$PATH"
 
@@ -46,6 +48,9 @@ alias profile='vim ~/.bash_profile'
 
 # Jotta
 alias jc="jotta-cli"
+alias jcs="jotta-cli status"
+alias jco="jotta-cli observe"
+alias jcls="jotta-cli ls Backup/$HOSTNAME"
 
 #PS1="$GREEN[$YELLOW\u$GREEN@$CYAN\h $GREEN\W]$YELLOW$(parse_git_branch)$RED$(parse_git_dirty)$GREEN\$ $RESET $(git_status)"
 
