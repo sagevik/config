@@ -21,7 +21,7 @@ super + alt + b ; {b, c}
     {brave, chromium}
 
 super + alt + o ; {f, c, w}
-    {nemo, qalculate, vmselector}
+    {nemo, qalculate-gtk, vmselector}
 
 # Screenshot
 Print
@@ -36,6 +36,9 @@ XF86AudioLowerVolume
 
 XF86AudioMute
     rs_volume "mute"
+
+super + XF86AudioMute
+    rs_volume "setvolume"
 
 # Screen brightness
 XF86MonBrightnessUp
