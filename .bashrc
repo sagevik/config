@@ -31,10 +31,12 @@ alias grep='grep --color=auto'
 alias mv="mv -iv"
 
 # Git
+source "$HOME/.config/bash/git-completion.bash"
 alias ga='git add'
 alias gst='git status'
 alias gc='git commit'
 alias gls='git ls-files'
+alias grv='git remote -v'
 alias cfg="/usr/bin/git --git-dir=$HOME/config/ --work-tree=$HOME"
 
 # Edit configs
