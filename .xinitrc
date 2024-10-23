@@ -34,7 +34,7 @@ fi
 
 
 # Keyboard layout
-setxkbmap no &
+setxkbmap no -option ctrl:nocaps &
 
 # Screen resolution
 xrandr --output eDP-1 --primary --mode 1920x1200 --pos 0x0 --rotate normal &
