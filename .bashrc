@@ -15,6 +15,7 @@ CYAN="\[\e[1;36m\]"
 RESET="\[\e[m\]"
 
 export XCURSOR_SIZE=16
+export LIBVIRT_DEFAULT_URI=qemu:///system
 
 # Path
 export PATH="$HOME/.dotfiles/bin:$PATH"
