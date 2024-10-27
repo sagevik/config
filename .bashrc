@@ -21,31 +21,33 @@ export LIBVIRT_DEFAULT_URI=qemu:///system
 export PATH="$HOME/scripts:$PATH"
 
 # Alias
-alias reload='source ~/.bashrc'
+alias reload="source ~/.bashrc"
 
-alias ..='cd ..'
+alias ..="cd .."
 
-alias ls='ls --color=auto'
-alias la='ls -a --color=auto'
-alias ll='ls -l --color=auto'
-alias lla='ls -la --color=auto'
-alias grep='grep --color=auto'
+alias ls="ls --color=auto"
+alias la="ls -a --color=auto"
+alias ll="ls -l --color=auto"
+alias lla="ls -la --color=auto"
+alias grep="grep --color=auto"
 
 alias mv="mv -iv"
 
 # Git
 source "$HOME/.config/bash/git-completion.bash"
-alias ga='git add'
-alias gst='git status'
-alias gc='git commit'
-alias gls='git ls-files'
-alias grv='git remote -v'
+alias ga="git add"
+alias gst="git status"
+alias gc="git commit"
+alias gb="git branch"
+alias gls="git ls-files"
+alias glods="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short"
+alias grv="git remote -v"
 alias cfg="/usr/bin/git --git-dir=$HOME/config/ --work-tree=$HOME"
 
 # Edit configs
-alias bashrc='vim ~/.bashrc'
-alias xinitrc='vim ~/.xinitrc'
-alias profile='vim ~/.bash_profile'
+alias bashrc="vim ~/.bashrc"
+alias xinitrc="vim ~/.xinitrc"
+alias profile="vim ~/.bash_profile"
 
 # Jotta
 alias jc="jotta-cli"
