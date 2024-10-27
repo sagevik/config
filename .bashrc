@@ -18,7 +18,7 @@ export XCURSOR_SIZE=16
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
 # Path
-export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="$HOME/scripts:$PATH"
 
 # Alias
 alias reload='source ~/.bashrc'
