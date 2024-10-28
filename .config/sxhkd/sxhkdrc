@@ -1,0 +1,45 @@
+# monitor
+super + control + alt + p
+    monitorsetup
+
+super + alt + p
+    displayselect
+
+# clients
+super + shift + p
+    clients
+
+# lock
+super + control + alt + l
+    pow
+
+super + r ; {r, w, c}
+    {rofi -show drun, rofi -show window, rofi -show combi}
+
+super + alt + o ; {f, b, c, v, g}
+    {nemo, brave, qalculate-gtk, vmselector, gimp}
+
+# Screenshot
+{_, shift +, control +}Print
+    {scrshot "selection", scrshot "window", scrshot "fullscreen"}
+
+# Volume settings
+XF86AudioRaiseVolume
+    volume "up"
+
+XF86AudioLowerVolume
+    volume "down"
+
+XF86AudioMute
+    volume "mute"
+
+# Screen brightness
+XF86MonBrightnessUp
+    brightness "up"
+
+XF86MonBrightnessDown
+    brightness "down"
+
+XF86Display
+    displayselect
+
