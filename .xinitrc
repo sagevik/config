@@ -55,6 +55,9 @@ packageupdates &
 nm-applet &
 blueman-applet &
 
+# Hotkey daemon
+sxhkd &
+
 # Restart loop
 while true; do
     dwm >/dev/null 2>&1
