@@ -16,8 +16,8 @@ super + control + alt + l
 super + r ; {r, w, c}
     {rofi -show drun, rofi -show window, rofi -show combi}
 
-super + alt + o ; {f, b, c, v, g}
-    {nemo, brave, qalculate-gtk, vmselector, gimp}
+super + alt + o ; {f, b, c, v, g, j}
+    {nemo, brave, qalculate-gtk, vmselector, gimp, joplin-desktop}
 
 # Screenshot
 {_, shift +, control +}Print
@@ -33,6 +33,10 @@ XF86AudioLowerVolume
 XF86AudioMute
     volume "mute"
 
+super + XF86AudioMute
+    volume "setvolume"
+
+
 # Screen brightness
 XF86MonBrightnessUp
     brightness "up"
@@ -43,3 +47,9 @@ XF86MonBrightnessDown
 XF86Display
     displayselect
 
+# bookmark
+Insert
+    bookmark "set"
+
+super + Insert
+    bookmark "get"
