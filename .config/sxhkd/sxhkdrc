@@ -10,7 +10,7 @@ super + shift + p
     clients
 
 # lock
-super + control + alt + l
+super + alt + BackSpace
     pow
 
 super + r ; {r, w, c}
@@ -49,7 +49,11 @@ XF86Display
 
 # bookmark
 Insert
-    bookmark "set"
+    snippet "set"
 
 super + Insert
-    bookmark "get"
+    snippet "get"
+
+super + alt + Insert
+    snippet
+
