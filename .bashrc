@@ -17,6 +17,12 @@ RESET="\[\e[m\]"
 export XCURSOR_SIZE=16
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
+# Bash completion
+source /usr/share/bash-completion/bash_completion
+
+# Bash functions
+source $HOME/.config/bash/bash-functions.bash
+
 # Alias
 alias reload="source ~/.bashrc"
 
@@ -46,7 +52,7 @@ alias cfg="/usr/bin/git --git-dir=$HOME/config/ --work-tree=$HOME"
 alias bashrc="vim ~/.bashrc"
 alias xinitrc="vim ~/.xinitrc"
 alias profile="vim ~/.bash_profile"
-alias sxhkdrc="vim ~/.config/sxhkd/sxhkdrc"
+alias sxhkdrc=edit_and_reload_sxhkdrc
 
 # Jotta
 alias jc="jotta-cli"
