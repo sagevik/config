@@ -58,6 +58,9 @@ blueman-applet &
 # Hotkey daemon
 sxhkd &
 
+# Polkit
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
 # Restart loop
 while true; do
     dwm >/dev/null 2>&1
