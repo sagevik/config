@@ -98,9 +98,15 @@ git_status() {
 }
 
 update_prompt() {
-    #PS1="$GREEN[$YELLOW\u$GREEN@$CYAN\h $GREEN\w]$(git_status)$GREEN\$ $RESET"
-    #PS1="$CYAN $YELLOW\u$GREEN@$CYAN\h $GREEN\w $(git_status)$CYAN $RESET"
-    PS1="$CYAN  $GREEN\w$(git_status)$CYAN  $RESET"
+    if [[ -n "$DISPLAY" ]] || [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
+        #PS1="$GREEN[$YELLOW\u$GREEN@$CYAN\h $GREEN\w]$(git_status)$GREEN\$ $RESET"
+        #PS1="$CYAN $YELLOW\u$GREEN@$CYAN\h $GREEN\w $(git_status)$CYAN $RESET"
+        PS1="$CYAN  $GREEN\w$(git_status)$CYAN  $RESET"
+    else
+        # Simpler prompt for TTY
+        PS1="$GREEN[$YELLOW\u$GREEN@$CYAN\h $GREEN\w]$(git_status)$GREEN\$ $RESET"
+    fi
+
 }
 
 PROMPT_COMMAND=update_prompt
