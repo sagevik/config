@@ -5,7 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Colors
+
+# ----------> Colors <---------- #
+
 RED="\[\e[1;31m\]"
 GREEN="\[\e[1;32m\]"
 YELLOW="\[\e[1;33m\]"
@@ -14,16 +16,34 @@ PURPLE="\[\e[1;35m\]"
 CYAN="\[\e[1;36m\]"
 RESET="\[\e[m\]"
 
+
+# ----------> Colored man pages <---------- #
+
+# from: https://wiki.archlinux.org/index.php/Color_output_in_console#man
+export LESS_TERMCAP_mb=$'\e[1;32m'     # begin bold
+export LESS_TERMCAP_md=$'\e[1;33m'     # begin blink
+export LESS_TERMCAP_so=$'\e[01;44;37m' # begin reverse video
+export LESS_TERMCAP_us=$'\e[01;37m'    # begin underline
+export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
+export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
+export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
+export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
+export MANPAGER="less --use-color -Dd+r -Du+b +Gg"
+
+
+# ----------> Exports <---------- #
+
 export XCURSOR_SIZE=16
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
-# Bash completion
-source /usr/share/bash-completion/bash_completion
 
-# Bash functions
+# ----------> Bash <---------- #
+source /usr/share/bash-completion/bash_completion
 source $HOME/.config/bash/bash-functions.bash
 
-# Alias
+
+# ----------> Alias <---------- #
+
 alias reload="source ~/.bashrc"
 alias sctl="sudo systemctl"
 
@@ -61,11 +81,8 @@ alias jcs="jotta-cli status"
 alias jco="jotta-cli observe"
 alias jcls="jotta-cli ls Backup/$HOSTNAME"
 
-#PS1="$GREEN[$YELLOW\u$GREEN@$CYAN\h $GREEN\W]$YELLOW$(parse_git_branch)$RED$(parse_git_dirty)$GREEN\$ $RESET $(git_status)"
 
-#PS1="\e[1;36m\]\$(parse_git_branch)\[\033[31m\]\$(parse_git_dirty)\n\[\033[1;33m\]  \[\e[1;37m\] \w \[\e[1;36m\]$\[\e[1;37m\] "
-
-# Prompt
+# ----------> Prompt <---------- #
 
 function parse_git_dirty {
   STATUS="$(git status 2> /dev/null)"
@@ -110,3 +127,4 @@ update_prompt() {
 }
 
 PROMPT_COMMAND=update_prompt
+
