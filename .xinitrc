@@ -46,7 +46,7 @@ picom --config $HOME/.config/picom/picom.conf &
 slstatus &
 
 # wallpaper
-$HOME/./.fehbg &
+xwallpaper --zoom $HOME/.local/share/background/wp.jpg
 
 # Updates
 packageupdates &
