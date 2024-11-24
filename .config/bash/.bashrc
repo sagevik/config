@@ -7,7 +7,6 @@
 
 
 # ----------> Colors <---------- #
-
 RED="\[\e[1;31m\]"
 GREEN="\[\e[1;32m\]"
 YELLOW="\[\e[1;33m\]"
@@ -18,7 +17,6 @@ RESET="\[\e[m\]"
 
 
 # ----------> Colored man pages <---------- #
-
 # from: https://wiki.archlinux.org/index.php/Color_output_in_console#man
 export LESS_TERMCAP_mb=$'\e[1;32m'     # begin bold
 export LESS_TERMCAP_md=$'\e[1;33m'     # begin blink
@@ -32,6 +30,15 @@ export MANPAGER="less --use-color -Dd+r -Du+b +Gg"
 
 
 # ----------> Exports <---------- #
+export BROWSER="brave"
+export EDITOR="vim"
+export VISUAL="vim"
+export MYVIMRC="$HOME/.config/vim/.vimrc"
+export VIMINIT="source $MYVIMRC"
+export LESSHISTFILE=-
+export HISTFILE="$HOME/.config/bash/.bash_history"
+export INPUTRC="$HOME/.config/bash/.inputrc"
+export GIT_CONFIG_GLOBAL="$HOME/.config/git/.gitconfig"
 
 export XCURSOR_SIZE=16
 export LIBVIRT_DEFAULT_URI=qemu:///system
@@ -43,8 +50,7 @@ source $HOME/.config/bash/bash-functions.bash
 
 
 # ----------> Alias <---------- #
-
-alias reload="source ~/.bashrc"
+alias reload="source ~/.config/bash/.bashrc"
 alias sctl="sudo systemctl"
 
 alias ..="cd .."
@@ -70,9 +76,10 @@ alias grv="git remote -v"
 alias cfg="/usr/bin/git --git-dir=$HOME/config/ --work-tree=$HOME"
 
 # Edit configs
-alias bashrc="vim ~/.bashrc"
+alias bashrc="vim ~/.config/bash/.bashrc"
 alias xinitrc="vim ~/.xinitrc"
-alias profile="vim ~/.bash_profile"
+alias profile="vim ~/.config/bash/.bash_profile"
+alias vimrc="vim ~/.config/vim/.vimrc"
 alias sxhkdrc=edit_and_reload_sxhkdrc
 
 # Jotta
@@ -83,7 +90,6 @@ alias jcls="jotta-cli ls Backup/$HOSTNAME"
 
 
 # ----------> Prompt <---------- #
-
 function parse_git_dirty {
   STATUS="$(git status 2> /dev/null)"
   if [[ $? -ne 0 ]]; then printf ""; return; else printf " ["; fi
