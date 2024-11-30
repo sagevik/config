@@ -20,7 +20,7 @@ super + alt + BackSpace
 super + r ; {r, w, c}
     {rofi -show drun, rofi -show window, rofi -show combi}
 
-super + alt + o ; {f, b, c, v, g, j}
+super + o ; {f, b, c, v, g, j}
     {nemo, brave, qalculate-gtk, vmselector, gimp, joplin-desktop}
 
 # Screenshot
