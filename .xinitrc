@@ -49,7 +49,7 @@ slstatus &
 xwallpaper --zoom $HOME/.local/share/background/wp.png
 
 # Updates
-packageupdates &
+archupdate -b &
 
 # Systray
 nm-applet &
