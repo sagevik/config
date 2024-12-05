@@ -25,7 +25,7 @@ export LESS_TERMCAP_us=$'\e[01;37m'    # begin underline
 export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
 export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
 export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
-export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
+
 export MANPAGER="less --use-color -Dd+r -Du+b +Gg"
 
 
@@ -75,6 +75,9 @@ alias glods="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgr
 alias grv="git remote -v"
 alias cfg="/usr/bin/git --git-dir=$HOME/config/ --work-tree=$HOME"
 
+# Vim
+alias v="vim"
+
 # Edit configs
 alias bashrc="vim ~/.config/bash/.bashrc"
 alias xinitrc="vim ~/.xinitrc"
@@ -87,6 +90,59 @@ alias jc="jotta-cli"
 alias jcs="jotta-cli status"
 alias jco="jotta-cli observe"
 alias jcls="jotta-cli ls Backup/$HOSTNAME"
+
+
+# ----------> Functions <---------- #
+
+#cd() {
+#    [[ $# -eq 0 ]] && return
+#    builtin cd "$@"
+#}
+
+fzfcd() {
+#    cd $1
+    if [ -z $1 ]
+    then
+        #selection="$(ls -a | fzf --height 40% --reverse --border)"
+        selection="$(ls -d */ | fzf --reverse --border)"
+        if [[ -d "$selection" ]]
+        then
+            cd "$selection"
+        elif [[ -f "$selection" ]]
+        then
+            echo "$selection is a file"
+        fi
+    fi
+}
+alias f=fzfcd
+
+
+# ----------> Archive Extract <---------- #
+
+ex ()
+{
+    if [ -f $1 ] ; then
+      case $1 in
+        *.tar.bz2)   tar xjf $1   ;;
+        *.tar.gz)    tar xzf $1   ;;
+        *.bz2)       bunzip2 $1   ;;
+        *.rar)       unrar x $1   ;;
+        *.gz)        gunzip $1    ;;
+        *.tar)       tar xvf $1   ;;
+        *.tbz2)      tar xjf $1   ;;
+        *.tgz)       tar xzvf $1  ;;
+        *.zip)       unzip $1     ;;
+        *.Z)         uncompress $1;;
+        *.7z)        7za e x $1   ;;
+        *.deb)       ar x $1      ;;
+        *.tar.xz)    tar xf $1    ;;
+        *.tar.zst)   unzstd $1    ;;
+        *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
 
 
 # ----------> Prompt <---------- #
