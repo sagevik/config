@@ -146,7 +146,7 @@ ex ()
 
 
 # ----------> Prompt <---------- #
-function parse_git_dirty {
+parse_git_dirty() {
   STATUS="$(git status 2> /dev/null)"
   if [[ $? -ne 0 ]]; then printf ""; return; else printf " ["; fi
   if echo ${STATUS} | grep -c "renamed:"         &> /dev/null; then printf " >"; else printf ""; fi
