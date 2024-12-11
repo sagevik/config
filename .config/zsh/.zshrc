@@ -14,6 +14,7 @@ export LIBVIRT_DEFAULT_URI=qemu:///system
 autoload -Uz compinit
 setopt PROMPT_SUBST
 compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-Z}'
 zstyle ':completion:*' menu select
 
 zmodload zsh/complist
