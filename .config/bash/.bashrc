@@ -42,6 +42,7 @@ export GIT_CONFIG_GLOBAL="$HOME/.config/git/.gitconfig"
 
 export XCURSOR_SIZE=16
 export LIBVIRT_DEFAULT_URI=qemu:///system
+export GOPATH="$HOME/dev/go"
 
 
 # ----------> Bash <---------- #
