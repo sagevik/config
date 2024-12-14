@@ -55,9 +55,6 @@ archupdate -b &
 nm-applet &
 blueman-applet &
 
-# Hotkey daemon
-sxhkd &
-
 # Polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
