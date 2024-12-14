@@ -138,11 +138,11 @@ git_status() {
         echo ""
 	return
     else
-        echo "%B%F{yellow}($(parse_git_branch)%F{red}$(parse_git_dirty)%F{yellow})"
+        echo "%B%F{yellow}($(parse_git_branch)%F{red}$(parse_git_dirty)%F{yellow}) "
     fi
 }
 
-PROMPT='%B%F{cyan}  %B%F{green}%~ $(git_status) %B%F{cyan} %b%F{white}'
+PROMPT='%B%F{cyan}  %B%F{green}%~ $(git_status)%B%F{cyan} %b%F{white}'
 #RPROMPT='%b%F{white}%T'
 #PROMPT="%B%F{red}[%F{yellow}%n%F{green}@%F{blue}%M %F{magenta}%~%F{red}]%F{green}$(git_status)$%{$reset_color%}%b "
 
