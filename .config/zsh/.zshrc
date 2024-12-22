@@ -10,6 +10,7 @@ export GIT_CONFIG_GLOBAL="$HOME/.config/git/.gitconfig"
 export XCURSOR_SIZE=16
 export LIBVIRT_DEFAULT_URI=qemu:///system
 export GOPATH="$HOME/dev/go"
+export PATH="$HOME/dev/go/bin:$PATH"
 
 # Basic auto/tab complete:
 autoload -Uz compinit
@@ -153,3 +154,6 @@ HISTFILE=~/.cache/zsh/history
 
 # Load zsh-syntax-highlighting
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
+# zoxide
+eval "$(zoxide init zsh)"
